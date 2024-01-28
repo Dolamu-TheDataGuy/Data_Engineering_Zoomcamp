@@ -1,2 +1,5 @@
 csv/
 parquet/
+images/
+polar_dat.ipynb
+requirements.txt
