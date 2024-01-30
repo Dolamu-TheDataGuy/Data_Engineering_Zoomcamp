@@ -1,19 +1,19 @@
 version: '3.8'
 
 services:
-  postgres:
+  postgresdb:
     image: postgres:16
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: new_york_taxi
-
     volumes:
-      - "${pwd}/postgres-data-volume:/var/lib/postgresql/data"
+      - "./yellow_taxi_data:/var/lib/postgresql/data"
     restart: always
-
     ports:
       - "5432:5432"
+    networks:
+      - pg-network
 
   pgadmin:
     image: dpage/pgadmin4
@@ -23,11 +23,13 @@ services:
       PGADMIN_DEFAULT_PASSWORD: root
     ports:
       - "5050:80"
-
-  jupyter:
-    image: jupyter/pyspark-notebook
-    ports:
-      - "8888:8888"
+    volumes:
+      - "./pgadmin_data:/var/lib/pgadmin"
+    networks:
+      - pg-network
+    depends_on:
+      - postgresdb
     
-volumes:
-  postgres-data-volume:
+networks:
+  pg-network:
+    name: pg-network
