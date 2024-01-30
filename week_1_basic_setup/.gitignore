@@ -4,3 +4,5 @@ images/
 polar_dat.ipynb
 requirements.txt
 .env
+pgadmin_data
+yellow_taxi_data
