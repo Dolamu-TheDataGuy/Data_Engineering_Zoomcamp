@@ -6,3 +6,7 @@ requirements.txt
 .env
 pgadmin_data
 yellow_taxi_data
+pycache
+.ipynb_checkpoints
+data.csv
+data.parquet
