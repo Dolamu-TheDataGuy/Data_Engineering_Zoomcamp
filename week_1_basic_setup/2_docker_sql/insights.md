@@ -10,6 +10,6 @@
 * install sqlalchemy, psycopg2 and python-dotenv libraries for establishing connection to database, read data from database, and interacting with environment variables respectively
 ```pip install sqlalchemy psycopg2 python-dotenv```
 
-
+05ea76799eea5b06e05479f8863dbd81913318da
 
 

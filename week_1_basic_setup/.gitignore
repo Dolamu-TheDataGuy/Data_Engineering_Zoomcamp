@@ -10,3 +10,4 @@ pycache
 .ipynb_checkpoints
 data.csv
 data.parquet
+zone.*
