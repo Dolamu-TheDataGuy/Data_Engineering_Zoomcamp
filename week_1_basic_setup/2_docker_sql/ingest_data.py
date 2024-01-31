@@ -1,8 +1,9 @@
 import os
 import pandas as pd
 from time import time
+import pyarrow
+import fastparquet
 from sqlalchemy import create_engine
-import pyarrow as pa
 from dotenv import load_dotenv
 
 load_dotenv()

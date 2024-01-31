@@ -29,6 +29,26 @@ services:
       - pg-network
     depends_on:
       - postgresdb
+
+  ingest_data_pg:
+    image: taxi_ingest:v1
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - HOST=postgresdb
+      - PORT=5432
+      - TABLE_NAME=${TABLE_NAME}
+      - URL=${URL}
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "5049:5049"
+    networks:
+      - pg-network
+    depends_on:
+      - postgresdb
     
 networks:
   pg-network:
