@@ -90,3 +90,33 @@ WHERE
     "PULocationID" NOT IN (SELECT "LocationID" FROM zones)
 LIMIT 100;
 ```
+
+* 
+
+```
+SELECT
+    tpep_pickup_datetime,
+    tpep_dropoff_datetime,
+    DATE_TRUNC('DAY', tpep_dropoff_datetime)
+    total_amount,
+FROM 
+    yellow_taxi_data t
+LIMIT 100;
+
+```
+
+* Another query
+```
+SELECT
+    CAST(tpep_dropoff_datetime AS DATE) as "day",
+    "DOLocationID",
+	COUNT(1) AS "count",
+	MAX(total_amount),
+	MAX(passenger_count)
+FROM 
+    yellow_taxi_data t
+GROUP BY
+	 1, 2 
+ORDER BY "day" ASC, "DOLocationID" ASC;
+```
+NB: The `GROUP BY` command precedes the `ORDER BY` command, the `GROUP BY` command sorts a column in groups and the `ORDER BY` sort the provided either in ascending or descending order using the `GROUP BY` column as a control.
