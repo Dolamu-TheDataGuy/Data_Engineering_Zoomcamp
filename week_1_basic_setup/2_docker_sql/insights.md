@@ -105,7 +105,7 @@ LIMIT 100;
 
 ```
 
-* Another query
+* Group according to dropoff time `tpep_dropoff_datetime` and dropoff location `DOLocationID` and also order by dropoff time and location. 
 ```
 SELECT
     CAST(tpep_dropoff_datetime AS DATE) as "day",
