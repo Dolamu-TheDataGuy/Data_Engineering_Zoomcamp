@@ -120,3 +120,6 @@ GROUP BY
 ORDER BY "day" ASC, "DOLocationID" ASC;
 ```
 NB: The `GROUP BY` command precedes the `ORDER BY` command, the `GROUP BY` command sorts a column in groups and the `ORDER BY` sort the provided either in ascending or descending order using the `GROUP BY` column as a control.
+
+Enabled `BigQuery API` to debug terraform code
+![Alt text](image.png)

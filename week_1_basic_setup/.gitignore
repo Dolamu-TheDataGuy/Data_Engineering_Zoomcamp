@@ -11,3 +11,11 @@ pycache
 data.csv
 data.parquet
 zone.*
+1_terraform/google-cloud-sdk
+1_terraform/de_cred_key.json
+1_terraform/google-cloud-cli-464.0.0-linux-x86_64.tar.gz
+application_default_credentials.json
+.terraform
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.lock.hcl
